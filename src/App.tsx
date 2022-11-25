@@ -1,17 +1,22 @@
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
+import { RouterView } from "vue-router";
 
 export const App = defineComponent({
   setup() {
-    const refConut = ref(0);
-    const onClik = () => {
-      refConut.value += 1;
-    };
-
     return () => (
       <>
-        <div>{refConut.value}</div>
         <div>
-          <button onClick={onClik}>+1</button>
+          <ul>
+            <li>
+              <router-link to="/">Foo</router-link>
+            </li>
+            <li>
+              <router-link to="/bar">Bar</router-link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <RouterView />
         </div>
       </>
     );
