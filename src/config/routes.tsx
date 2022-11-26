@@ -1,14 +1,11 @@
-import { Bar } from "../components/Bar";
-import { Foo } from "../components/Foo";
+import { RouteRecordRaw } from "vue-router";
 import { First } from "../components/welcome/First";
 import { Forth } from "../components/welcome/Forth";
 import { Second } from "../components/welcome/Second";
 import { Third } from "../components/welcome/Third";
 import { Welcome } from "../views/Welcome";
 
-export const routes = [
-  { path: "/", component: Foo },
-  { path: "/bar", component: Bar },
+export const routes: RouteRecordRaw[] = [
   {
     path: "/welcome",
     component: Welcome,
