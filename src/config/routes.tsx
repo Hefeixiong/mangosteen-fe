@@ -4,12 +4,14 @@ import { First } from "../components/welcome/First";
 import { Forth } from "../components/welcome/Forth";
 import { Second } from "../components/welcome/Second";
 import { Third } from "../components/welcome/Third";
+import { Welcome } from "../views/Welcome";
 
 export const routes = [
   { path: "/", component: Foo },
   { path: "/bar", component: Bar },
   {
     path: "/welcome",
+    component: Welcome,
     children: [
       { path: "1", component: First },
       { path: "2", component: Second },
