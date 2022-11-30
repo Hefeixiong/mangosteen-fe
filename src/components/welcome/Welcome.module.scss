@@ -1,8 +1,4 @@
-.wrapper{
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  > .card{
+  .card{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -18,7 +14,7 @@
       margin-top: 40px;
     }
   }
-  > .actions{
+.actions{
     position: fixed;
     z-index: var(--z-index-bottom-nav);
     background: var(--welcome-bg-end);
@@ -35,4 +31,3 @@
     padding-bottom: var(--welcome-nav-gap);
     > .fake{visibility: hidden;}
   }
-}

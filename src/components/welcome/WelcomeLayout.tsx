@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "vue";
-import s from "./WelcomeLayout.module.scss";
+import s from "./Welcome.module.scss";
 
 export const WelcomeLayout: FunctionalComponent = (props, context) => {
   const { slots: { icon, title, buttons } } = context;
