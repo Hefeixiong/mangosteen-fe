@@ -1,8 +1,6 @@
 import { FunctionalComponent } from "vue";
 import s from "./Welcome.module.scss";
 import cloud  from "../../assets/icons/cloud.svg";
-import { RouterLink } from "vue-router";
-import { WelcomeLayout } from "./WelcomeLayout";
 
 export const Forth: FunctionalComponent = () => {
   return (
