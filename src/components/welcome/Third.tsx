@@ -1,11 +1,12 @@
 import { FunctionalComponent } from "vue";
 import s from "./Welcome.module.scss";
-import chart from "../../assets/icons/chart.svg";
 
 export const Third: FunctionalComponent = () => {
   return (
     <div class={s.card}>
-      <img src={chart} />
+      <svg>
+        <use xlinkHref="#chart"></use>
+      </svg>
       <h2>
         每日提醒
         <br />
