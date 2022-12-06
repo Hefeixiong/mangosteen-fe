@@ -13,7 +13,7 @@ import s from './StartPage.module.scss';
          <div class={s.button_wrapper}>
            <Button class={s.button} onClick={onClick}>测试</Button>
          </div>
-         <FloatButton/>
+         <FloatButton iconName="add"/>
        </div>
      )
    }

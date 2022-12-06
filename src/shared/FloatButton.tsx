@@ -1,12 +1,19 @@
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from "vue";
 import s from './FloatButton.module.scss'
-import { Icon } from "./Icon";
+import { Icon, IconName } from "./Icon";
 
 export const FloatButton = defineComponent({
+  props: {
+    iconName: {
+      type: String as PropType<IconName>,
+      required: true
+    }
+  },
   setup: (props, context) => {
+    console.log(props.iconName)
     return () => (
       <div class={s.floatButton}>
-        <Icon name='add' class={s.icon}></Icon>
+        <Icon name={props.iconName} class={s.icon}></Icon>
       </div>
     )
   }
