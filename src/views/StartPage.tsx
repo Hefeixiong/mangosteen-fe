@@ -1,6 +1,8 @@
 import { defineComponent } from 'vue';
  import { Button } from '../shared/Button';
+import { Center } from '../shared/Center';
 import { FloatButton } from '../shared/FloatButton';
+import { Icon } from '../shared/Icon';
 import s from './StartPage.module.scss';
  
  export const StartPage = defineComponent({
@@ -10,6 +12,10 @@ import s from './StartPage.module.scss';
      }
      return () => (
        <div>
+         <nav>meun</nav>
+         <Center>
+           <Icon name='pig' class={s.pig} />
+         </Center>
          <div class={s.button_wrapper}>
            <Button class={s.button} onClick={onClick}>测试</Button>
          </div>
