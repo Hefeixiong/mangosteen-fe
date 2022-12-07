@@ -13,7 +13,6 @@ export const Icon = defineComponent({
     },
   },
   setup: (props, context) => {
-    console.log(props.name)
     return () => (
       <svg class={s.icon} onClick={props.onClick}>
         <use xlinkHref={'#' + props.name}></use>

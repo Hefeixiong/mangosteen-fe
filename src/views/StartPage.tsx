@@ -12,7 +12,6 @@ import s from './StartPage.module.scss';
      const refOverlayVisible = ref(false)
      const onClickMenu = () => {
        refOverlayVisible.value = !refOverlayVisible.value
-       console.log(refOverlayVisible.value)
       }
      return () => (
        <div>
