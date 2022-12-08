@@ -1,4 +1,6 @@
 import { RouteRecordRaw } from "vue-router";
+import { ItemCreate } from "../components/item/ItemCreate";
+import { ItemList } from "../components/item/ItemList";
 import { First } from "../components/welcome/First";
 import { FirstAction } from "../components/welcome/FirstAction";
 import { Forth } from "../components/welcome/Forth";
@@ -7,6 +9,7 @@ import { Second } from "../components/welcome/Second";
 import { SecondAction } from "../components/welcome/SecondAction";
 import { Third } from "../components/welcome/Third";
 import { ThirdAction } from "../components/welcome/ThirdAction";
+import { ItemPage } from "../views/ItemPage";
 import { StartPage } from "../views/StartPage";
 import { Welcome } from "../views/Welcome";
 
@@ -23,5 +26,14 @@ export const routes: RouteRecordRaw[] = [
       { path: "4", name: 'Welcome4', components: {main: Forth, footer: ForthAction} },
     ],
   },
-  { path: '/start', component: StartPage}
+  { path: '/start', component: StartPage },
+  {
+    path: '/items',
+    component: ItemPage,
+    children: [
+      { path: '', component: ItemList },
+      { path: 'create', component: ItemCreate}
+    ]
+    
+  }
 ];
