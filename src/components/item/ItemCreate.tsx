@@ -15,10 +15,10 @@ export const ItemCreate = defineComponent({
       <MainLayout>
         {{
           title: () => "记一笔",
-          icon: () => <Icon name="left" />,
+          icon: () => <Icon name="left" class={s.navIcon} />,
           default: () => (
             <>
-              <Tabs v-modle:selected={refKind.value}>
+              <Tabs v-model:selected={refKind.value}>
                 <Tab name="支出">icon 列表</Tab>
                 <Tab name="收入">icon 列表2</Tab>
               </Tabs>
