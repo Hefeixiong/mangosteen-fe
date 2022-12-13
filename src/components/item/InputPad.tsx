@@ -10,24 +10,79 @@ export const InputPad = defineComponent({
     },
   },
   setup: (props, context) => {
+    const appendText = (n: number | string) =>
+      (refAmount.value += n.toString());
     const buttons = [
-      { text: "1", onclick: () => {} },
-      { text: "2", onclick: () => {} },
-      { text: "3", onclick: () => {} },
+      {
+        text: "1",
+        onclick: () => {
+          appendText(1);
+        },
+      },
+      {
+        text: "2",
+        onclick: () => {
+          appendText(2);
+        },
+      },
+      {
+        text: "3",
+        onclick: () => {
+          appendText(3);
+        },
+      },
+      {
+        text: "4",
+        onclick: () => {
+          appendText(4);
+        },
+      },
+      {
+        text: "5",
+        onclick: () => {
+          appendText(5);
+        },
+      },
+      {
+        text: "6",
+        onclick: () => {
+          appendText(6);
+        },
+      },
+      {
+        text: "7",
+        onclick: () => {
+          appendText(7);
+        },
+      },
+      {
+        text: "8",
+        onclick: () => {
+          appendText(8);
+        },
+      },
+      {
+        text: "9",
+        onclick: () => {
+          appendText(9);
+        },
+      },
+      {
+        text: ".",
+        onclick: () => {
+          appendText(".");
+        },
+      },
+      {
+        text: "0",
+        onclick: () => {
+          appendText(0);
+        },
+      },
       { text: "清空", onclick: () => {} },
-      { text: "4", onclick: () => {} },
-      { text: "5", onclick: () => {} },
-      { text: "6", onclick: () => {} },
-      { text: "+", onclick: () => {} },
-      { text: "7", onclick: () => {} },
-      { text: "8", onclick: () => {} },
-      { text: "9", onclick: () => {} },
-      { text: "-", onclick: () => {} },
-      { text: ".", onclick: () => {} },
-      { text: "0", onclick: () => {} },
-      { text: "删", onclick: () => {} },
       { text: "提交", onclick: () => {} },
     ];
+    const refAmount = ref("");
     const now = new Date();
     const refDate = ref<Date>(now);
     const refDatePickerVisible = ref(false);
@@ -60,7 +115,7 @@ export const InputPad = defineComponent({
               </Popup>
             </span>
           </span>
-          <span class={s.amount}>199.00</span>
+          <span class={s.amount}>{refAmount.value}</span>
         </div>
         <div class={s.buttons}>
           {buttons.map((button) => (
