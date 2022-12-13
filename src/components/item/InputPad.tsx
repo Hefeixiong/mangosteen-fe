@@ -39,7 +39,7 @@ export const InputPad = defineComponent({
             <Icon name="date" class={s.icon} />
             <span>
               <span onClick={() => (refShowPop.value = true)}>
-                {time(refDate.value).format}
+                {time(refDate.value).format()}
               </span>
               <Popup position="bottom" v-model:show={refShowPop.value}>
                 <DatetimePicker
