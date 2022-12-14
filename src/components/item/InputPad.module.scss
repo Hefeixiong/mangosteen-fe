@@ -37,7 +37,7 @@
    border-top: 1px solid var(--button-border-color);
    > button {
      border: none;
-     background: var(--button-bg);
+     background: var(--input-button-bg);
      &:nth-child(1) {
        grid-area: n1;
      }
@@ -76,8 +76,8 @@
      }
      &:nth-child(13){
       grid-area: s;
-      background: var(--button-bg-important);
-      color: var(--button-text-important);
+      background: var(--input-button-bg-important);
+      color: var(--input-button-text-important);
      }
    }
  }
