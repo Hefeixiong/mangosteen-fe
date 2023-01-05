@@ -1,10 +1,10 @@
 import { defineComponent, reactive } from "vue";
 import { MainLayout } from "../../layouts/MainLayout";
 import { Button } from "../../shared/Button";
-import { EmojiSelect } from "../../shared/EmojiSelect";
 import { Icon } from "../../shared/Icon";
 import { Rules, validate } from "../../shared/validate";
 import s from "./Tag.module.scss";
+import { TagForm } from "./TagForm";
 export const TagEdit = defineComponent({
   setup: (props, context) => {
     const formDate = reactive({
@@ -44,43 +44,21 @@ export const TagEdit = defineComponent({
             />
           ),
           default: () => (
-            <form class={s.form} onSubmit={onSubmit}>
-              <div class={s.formRow}>
-                <label class={s.formLabel}>
-                  <span class={s.formItem_name}>标签名</span>
-                  <div class={s.formItem_value}>
-                    <input
-                      class={[s.formItem, s.input, s.error]}
-                      v-model={formDate.name}
-                    />
-                  </div>
-                  <div class={s.formItem_errorHint}>
-                    <span>{errors["name"] ? errors["name"][0] : ""}</span>
-                  </div>
-                </label>
+            <>
+              <TagForm />
+              <div class={s.actions}>
+                <Button level="danger" class={s.removeTags} onClick={() => {}}>
+                  删除标签
+                </Button>
+                <Button
+                  level="danger"
+                  class={s.removeTagsAndItems}
+                  onClick={() => {}}
+                >
+                  删除标签和记账
+                </Button>
               </div>
-              <div class={s.formRow}>
-                <label class={s.formLabel}>
-                  <span class={s.formItem_name}>符号{formDate.sign}</span>
-                  <div class={s.formItem_value}>
-                    <EmojiSelect
-                      v-model={formDate.sign}
-                      class={[s.formItem, s.emojiList, s.error]}
-                    />
-                  </div>
-                  <div class={s.formItem_errorHint}>
-                    <span>{errors["sign"] ? errors["sign"][0] : ""}</span>
-                  </div>
-                </label>
-              </div>
-
-              <p class={s.tips}>记账时长按标签即可进行编辑</p>
-              <div class={s.formRow}>
-                <div class={s.formItem_value}>
-                  <Button class={[s.formItem, s.button]}>确定</Button>
-                </div>
-              </div>
-            </form>
+            </>
           ),
         }}
       </MainLayout>
