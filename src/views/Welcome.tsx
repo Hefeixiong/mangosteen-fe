@@ -10,10 +10,10 @@ import { throttle } from "../shared/throttle";
 import s from "./Welcome.module.scss";
 
 const pushMap: Record<string, string> = {
-  'Welcome1': '/welcome/2',
-  'Welcome2': '/welcome/3',
-  'Welcome3': '/welcome/4',
-  'Welcome4': '/start'
+  Welcome1: "/welcome/2",
+  Welcome2: "/welcome/3",
+  Welcome3: "/welcome/4",
+  Welcome4: "/start",
 };
 
 export const Welcome = defineComponent({
@@ -25,8 +25,8 @@ export const Welcome = defineComponent({
     const route = useRoute();
     const router = useRouter();
     const replace = throttle(() => {
-      const name = (route.name || 'Welcome1').toString()
-      router.replace(pushMap[name])
+      const name = (route.name || "Welcome1").toString();
+      router.replace(pushMap[name]);
     }, 500);
     watchEffect(() => {
       if (swiping.value && direction.value === "left") {
