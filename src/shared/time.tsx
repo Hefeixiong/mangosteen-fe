@@ -54,7 +54,6 @@ export class Time {
     let date = new Date(this.date.getTime());
     switch (unit) {
       case "year":
-        date.setFullYear(date.getFullYear() + amount);
         const currentDate = date.getDate();
         date.setDate(1);
         date.setFullYear(date.getFullYear() + amount);
