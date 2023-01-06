@@ -36,11 +36,6 @@ export const ItemList = defineComponent({
       e.preventDefault();
       refOverlayVisible.value = false;
     };
-    watchEffect(() => {
-      if (refSelected.value === "自定义时间") {
-        refOverlayVisible.value = true;
-      }
-    });
     return () => (
       <MainLayout class={s.wrapper}>
         {{
@@ -51,6 +46,11 @@ export const ItemList = defineComponent({
               <Tabs
                 classPrefix={"customTabs"}
                 v-model:selected={refSelected.value}
+                onUpdate:selected={() =>
+                  refSelected.value === "自定义时间"
+                    ? (refOverlayVisible.value = true)
+                    : ""
+                }
               >
                 <Tab name="本月">
                   <ItemSummary
@@ -94,8 +94,18 @@ export const ItemList = defineComponent({
                       />
                       <FormItem>
                         <div class={s.actions}>
-                          <button type="button">取消</button>
-                          <button type="button">确认</button>
+                          <button
+                            type="button"
+                            onClick={() => (refOverlayVisible.value = false)}
+                          >
+                            确认
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => (refOverlayVisible.value = false)}
+                          >
+                            取消
+                          </button>
                         </div>
                       </FormItem>
                     </Form>
