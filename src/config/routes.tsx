@@ -1,6 +1,7 @@
 import { RouteRecordRaw } from "vue-router";
 import { ItemCreate } from "../components/item/ItemCreate";
 import { ItemList } from "../components/item/ItemList";
+import { Charts } from "../components/statistics/Charts";
 import { TagCreate } from "../components/tag/TagCreaete";
 import { TagEdit } from "../components/tag/TagEdit";
 import { First } from "../components/welcome/First";
@@ -65,5 +66,5 @@ export const routes: RouteRecordRaw[] = [
     ],
   },
   { path: "/sign_in", component: SignInPage },
-  { path: "/statistics", component: StatisticsPage },
+  { path: "/statistics", component: Charts },
 ];
