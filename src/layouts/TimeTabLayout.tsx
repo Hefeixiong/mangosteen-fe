@@ -1,6 +1,5 @@
 import { Overlay } from "vant";
 import { defineComponent, PropType, reactive, ref } from "vue";
-import { ItemSummary } from "../components/item/ItemSummary";
 import { Form, FormItem } from "../shared/Form";
 import { OverlayIcon } from "../shared/Overlay";
 import { Tab, Tabs } from "../shared/Tabs";
@@ -24,6 +23,7 @@ export const TimeTabLayout = defineComponent({
   props: {
     component: {
       type: Object as PropType<typeof demo>,
+      required: true,
     },
   },
   setup: (props, context) => {
@@ -69,25 +69,25 @@ export const TimeTabLayout = defineComponent({
                 }
               >
                 <Tab name="本月">
-                  <ItemSummary
+                  <props.component
                     startDate={timeList[0].start.format()}
                     endDate={timeList[0].end.format()}
                   />
                 </Tab>
                 <Tab name="上月">
-                  <ItemSummary
+                  <props.component
                     startDate={timeList[1].start.format()}
                     endDate={timeList[1].end.format()}
                   />
                 </Tab>
                 <Tab name="今年">
-                  <ItemSummary
+                  <props.component
                     startDate={timeList[2].start.format()}
                     endDate={timeList[2].end.format()}
                   />
                 </Tab>
                 <Tab name="自定义时间">
-                  <ItemSummary
+                  <props.component
                     startDate={customTime.start}
                     endDate={customTime.end}
                   />
